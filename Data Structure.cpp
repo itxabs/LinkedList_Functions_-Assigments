@@ -20,6 +20,14 @@ public:
 	{
 		head = NULL;
 	}
+	~SinglyLinked()
+	{
+		while (head) {
+			Node* temp = head;
+			head = head->next;
+			delete temp;
+		}
+	}
 
 	//Add 1st for singly linked list
 	void add1st(int value)
@@ -479,6 +487,14 @@ public:
 	{
 		head = NULL;
 	}
+	~Cir1lyLL()
+	{
+		while (head) {
+			Node* temp = head;
+			head = head->next;
+			delete temp;
+		}
+	}
 
 	void display()
 	{
@@ -688,6 +704,14 @@ private:
 public:
 	CircularDoublyLinkedList() {
 		head = NULL;
+	}
+	~CircularDoublyLinkedList()
+	{
+		while (head) {
+			Node* temp = head;
+			head = head->next;
+			delete temp;
+		}
 	}
 	// Add1st for circular 2bly linked list
 	void Add1st(int value)
@@ -1954,7 +1978,10 @@ outerInvalid:
 	case 5://outer case 5
 	{
 		system("pause");
+		obj.~SinglyLinked();
 		Ob.~Doubly();
+		obJ.~Cir1lyLL();
+		objj.~CircularDoublyLinkedList();
 		exit(0);
 		break;
 	}
